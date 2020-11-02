@@ -1,0 +1,23 @@
+server:
+  port: 9001
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+
+spring:
+  datasource:
+    username: root
+    password: yhx5407582588
+    url: jdbc:mysql://3l43723a04.wicp.vip:10878/my_springcloud?serverTimezone=Asia/Shanghai #加上时区，不然从数据库中获取时间有时差。
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: provider-9001
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
